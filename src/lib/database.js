@@ -1,4 +1,6 @@
 'use strict';
+var Promise = require('bluebird');
+var Hbase = Promise.promisifyAll(require('hbase'));
 var Sequelize = require('sequelize');
 var sql;
 var sqlInited;
@@ -23,3 +25,8 @@ module.exports = {
     return sql;
   }
 };
+
+module.exports.hbase = new Hbase({
+  host: process.env.HBASE_HOST,
+  port: process.env.HBASE_PORT
+});

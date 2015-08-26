@@ -14,7 +14,7 @@ module.exports = function(ipps, commander) {
       // Store in database
       if (commander.store) {
         src
-        .store(crawl, commander.store, commander.logsql)
+        .store(crawl, commander.logsql)
         // Send message
         .then(function(row) {
           if (commander.message) {

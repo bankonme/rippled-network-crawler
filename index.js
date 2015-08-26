@@ -71,11 +71,15 @@ commander
   });
 
 commander
-  .command('forever <ipp> <dbUrl>')
+  .command('forever <ipp>')
   .description('run crawl forever starting from ipp (-s flag will be turned on automatically)')
-  .action(function(ipp, dbUrl) {
+  .action(function(ipp) {
+    if (!process.env.HBASE_HOST || !process.env.HBASE_PORT) {
+      console.log('Missing env variables HBASE_HOST and HBASE_PORT');
+      return;
+    }
     src
-    .forever(ipp, dbUrl, commander)
+    .forever(ipp, commander)
     .then(commander.quiet ? _.noop : console.log)
     .catch(function(err) {
       console.error(err);

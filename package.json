@@ -1,6 +1,6 @@
 {
   "name": "rippled-network-crawler",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "command line interface to crawl a rippled network",
   "license": "ISC",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "check-types": "^3.3.0",
     "commander": "^2.8.1",
     "geoip-lite": "^1.1.6",
+    "hbase": "^0.2.1",
     "lodash": "^3.7.0",
     "mocha": "^2.2.5",
     "moment": "2.10.3",
